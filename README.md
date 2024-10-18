@@ -1,6 +1,8 @@
 # SQLLib
 1. Databasdesign:  
-    a) Skapa ett ER-diagram (Entity-Relationship diagram) för bibliotekssystemet.  
+    a) Skapa ett ER-diagram (Entity-Relationship diagram) för bibliotekssystemet.
+   ![image](https://github.com/user-attachments/assets/fb8f3206-c730-44c5-aeb8-90f72d8e3a84)
+
     b) Normalisera din databasstruktur till åtminstone 3NF (tredje normalform).  
     c) Skapa ett UML-klassdiagram som representerar din slutliga databasstruktur.
 
