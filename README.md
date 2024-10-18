@@ -18,7 +18,9 @@
     
 5. Datamanipulation:  
     a) Skriv SQL-frågor för att utföra CRUD-operationer (Create, Read, Update, Delete) på alla tabeller.
-   ```sql
+
+
+    ```sql
 	-- CRUD Operations Books
 
 	-- CREATE:
@@ -40,9 +42,10 @@
 
 	DELETE FROM Books
 	WHERE Title = 'Bröderna Lejonhjärta';
-```
-```sql
+   ```
 
+
+```sql
 	-- CRUD Operations Borrowers
 
 	-- CREATE:
@@ -65,6 +68,7 @@
 	DELETE FROM Borrowers
 	WHERE BorrowerID = 2;
 ```
+
 ```sql
 	-- CRUD Operations Loans
 
@@ -108,10 +112,11 @@
 11. Dokumentation: a) Skriv en kort rapport som beskriver din databasstruktur, designval och implementering.  
     b) Inkludera instruktioner för hur man skapar och populerar databasen.  
     c) Inkludera SQL-skript för att skapa och populerar databasen samt beskriv vad varje skript gör.
-     ```sql
-   CREATE DATABASE Library; 
 
-	USE Library;
+    ```sql
+   	CREATE DATABASE Library; 
+
+		USE Library;
 
 	CREATE TABLE Books (
 		BookID INT AUTO_INCREMENT PRIMARY KEY,
