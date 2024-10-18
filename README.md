@@ -5,6 +5,8 @@
 
     b) Normalisera din databasstruktur till åtminstone 3NF (tredje normalform).  
     c) Skapa ett UML-klassdiagram som representerar din slutliga databasstruktur.
+   ![image](https://github.com/user-attachments/assets/5993d09d-7564-4782-9f5c-b11611f73cc5)
+
 
    
     
