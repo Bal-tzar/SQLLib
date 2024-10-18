@@ -90,16 +90,71 @@
 ```
 
  
- b) Implementera minst två vyer (Views) som kombinerar data från flera tabeller.  
-    **Store procedure är inte med i uppgiften**
+ b) Implementera minst två vyer (Views) som kombinerar data från flera tabeller. 
+
+ ```sql
+	
+    -- Create view for current loans
+
+	CREATE VIEW CurrentLoans AS
+	SELECT Books.BookID, Books.Title, Loans.LoanDate, Loans.DueDate, Borrowers.Name AS Borrower
+	FROM Books
+	JOIN Loans ON Books.BookID = Loans.BookID
+	JOIN Borrowers ON Loans.BorrowerID = Borrowers.BorrowerID
+	WHERE Loans.ReturnDate IS NULL;
+
+
+	-- Create view for loans that are overdue
+
+	CREATE VIEW OverdueLoans AS 
+	SELECT Loans.LoanID, Books.Title, Borrowers.Name AS Borrower, Loans.DueDate
+	FROM Loans
+	INNER JOIN Books ON Loans.BookID = Books.BookID
+	INNER JOIN Borrowers ON Loans.BorrowerID = Borrowers.BorrowerID
+	WHERE Loans.ReturnDate IS NULL AND Loans.DueDate < CURRENT_DATE;
+```
 
 
     
 7. Avancerade frågor:  
     a) Skriv en SQL-fråga som använder JOIN för att hämta data från minst tre tabeller.
-   ``
-    b) Implementera en fråga som använder en subquery.  
+   ```sql
+   	-- Join data from three tables to get loan details
+
+	SELECT Loans.LoanID, Books.Title, Borrowers.Name AS Borrower, Loans.LoanDate, Loans.DueDate
+	FROM Loans
+	INNER JOIN Books ON Loans.BookID = Books.BookID
+	INNER JOIN Borrowers ON Loans.BorrowerID = Borrowers.BorrowerID;
+   ```
+
+    b) Implementera en fråga som använder en subquery.
+	```sql
+ 	-- Using subquery to find all borrowers who have borrowed 'The Shining'
+
+	SELECT Name, Email
+	FROM Borrowers
+	WHERE BorrowerID IN ( 
+		SELECT BorrowerID 
+		FROM Loans 
+		WHERE BookID = (
+			SELECT BookID 
+			FROM Books 
+			WHERE Title = 'The Shining' 
+		) 
+	);
+ 	```
+ 
     c) Skapa en fråga som använder GROUP BY och HAVING för att analysera data.
+   ```sql
+   -- Count the number of loans each borrower has made and filter borrowers with more than one loan
+
+	SELECT Borrowers.Name, COUNT(Loans.LoanID) AS LoanCount
+	FROM Borrowers
+	INNER JOIN Loans ON Borrowers.BorrowerID = Loans.BorrowerID
+	GROUP BY Borrowers.Name
+	HAVING COUNT(Loans.LoanID) > 1;
+   ```
+
     
 9. Säkerhet:  
     a) Beskriv hur du skulle implementera en enkel inloggningsfunktion för bibliotekssystemet. Vilka säkerhetsaspekter bör du ta hänsyn till?  
