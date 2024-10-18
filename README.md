@@ -13,37 +13,38 @@
 3. Implementering:  
     a) Skapa SQLite-tabeller baserat på din design.  
     b) Implementera lämpliga primärnycklar och främmande nycklar för att upprätthålla referensintegritet.
-   ```sql
+
+ ```sql
    CREATE DATABASE Library; 
 
-USE Library;
+	USE Library;
 
-CREATE TABLE Books (
-	BookID INT AUTO_INCREMENT PRIMARY KEY,
-	Author TEXT NOT NULL,
-	Title TEXT NOT NULL,
-	PublicationYear INT NOT NULL,
-	ISBN TEXT NOT NULL
-);
+	CREATE TABLE Books (
+		BookID INT AUTO_INCREMENT PRIMARY KEY,
+		Author TEXT NOT NULL,
+		Title TEXT NOT NULL,
+		PublicationYear INT NOT NULL,
+		ISBN TEXT NOT NULL
+	);
 
 
-CREATE TABLE Borrowers (
-	BorrowerID INT AUTO_INCREMENT PRIMARY KEY,
-	Name TEXT NOT NULL,
-	Email TEXT NOT NULL,
-	PhoneNum TEXT NOT NULL
-);
+	CREATE TABLE Borrowers (
+		BorrowerID INT AUTO_INCREMENT PRIMARY KEY,
+		Name TEXT NOT NULL,
+		Email TEXT NOT NULL,
+		PhoneNum TEXT NOT NULL
+	);
 
-CREATE TABLE Loans (
-	LoanID INT AUTO_INCREMENT PRIMARY KEY,
-	LoanDate DATE NOT NULL,
-	DueDate DATE NOT NULL,
-	ReturnDate DATE,
-	BookID INT NOT NULL,
-	BorrowerID INT NOT NULL,
-	FOREIGN KEY (BookID) REFERENCES Books(BookID),
-	FOREIGN KEY (BorrowerID) REFERENCES Borrowers(BorrowerID)
-);
+	CREATE TABLE Loans (
+		LoanID INT AUTO_INCREMENT PRIMARY KEY,
+		LoanDate DATE NOT NULL,
+		DueDate DATE NOT NULL,
+		ReturnDate DATE,
+		BookID INT NOT NULL,
+		BorrowerID INT NOT NULL,
+		FOREIGN KEY (BookID) REFERENCES Books(BookID),
+		FOREIGN KEY (BorrowerID) REFERENCES Borrowers(BorrowerID)
+	);
 ```
     
 5. Datamanipulation:  
