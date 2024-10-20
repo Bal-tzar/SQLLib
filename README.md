@@ -157,14 +157,34 @@
 
     
 9. Säkerhet:  
-    a) Beskriv hur du skulle implementera en enkel inloggningsfunktion för bibliotekssystemet. Vilka säkerhetsaspekter bör du ta hänsyn till?  
-    b) Förklara vad prepared statements är och varför de är viktiga för säkerheten i databasapplikationer. Ge ett exempel på hur de kan användas.  
+    a) Beskriv hur du skulle implementera en enkel inloggningsfunktion för bibliotekssystemet. Vilka säkerhetsaspekter bör du ta hänsyn till?
+
+	För att göra en inloggningsfunktion skulle jag låta användaren först skapa ett konto med användarnamn och lösenord. Användarens credentials sparas i en lista
+	för att kunna jämföra vid senare inloggningsförsök. För att skydda inloggningsuppgifterna måste dessa krypteras så att de inte är i plain text.
+	
+    b) Förklara vad prepared statements är och varför de är viktiga för säkerheten i databasapplikationer. Ge ett exempel på hur de kan användas.
+
+   	Ett prepared statement är en återanvändbar SQL-fråga för att till exempel låta en användare logga in på servern. 
+	Prepared statements är viktiga eftersom det gör programmet mer effektivt, men också mer säkert genom att användaren inte
+	kommer kunna ändra på SQL-frågan, utan endast på vissa förbestämda värden som till exempel lösenord och användarnamn.
+
     c) Identifiera och beskriv minst 1 vanlig attackvektorer mot databaser. Hur kan man skydda sig mot dessa?
+
+   	En vanlig attackvektor är en så kallad SQL-injection. Där en användare kan skriva in SQL-frågor i till exempel inloggsrutan. 
+	Detta gör det möjligt att till exempel logga in på servern som admin, få reda på alla inloggningsuppgifter, eller droppa hela databasen. 
+	För att skydda sig mot en SQL-injection är det viktigt att använda sig av prepared statements, för att inte ge användaren för mycket frihet när hen matar in data i textrutorna. 
     
-10. Analys och reflektion: a) Analysera din databasdesign och identifiera potentiella förbättringsområden.  
+11. Analys och reflektion:
+    a) Analysera din databasdesign och identifiera potentiella förbättringsområden.
+	Min databasdesign är möjligtvis ganska simpel, och något noobig. Jag tror att med tiden kommer jag lära mig fler och bättre sätt att hantera data på. 
+	Det kanske finns smidigare sätt att joina tabeller eller kanske bättre sätt att skapa en VIEW för att se om någon inte har lämnat tillbaka sitt lån i tid.
+
     b) Reflektera över dina designval och motivera dem.
+	Jag valde att designa databasen på sättet jag gjorde det eftersom det är så jag har lärt mig göra det. Jag valde att ha FKs i Loans-tabellen eftersom det är mest logiskt att samla datan från
+	Borrowers och Books där. En Borrower skapar ett nytt lån på en Book när hen lånar ut boken. Loans-tabellen är som bibliotiekarien som håller koll på vem som har lånat vad och när. 
+	För att komma fram till designvalen tog jag hjälp av föreläsningsmaterial, ChatGPT och w3schools.com. Jag har lagt extra tid på att försöka förstå varför man göra vissa saker och i vilken ordning.  
     
-11. Dokumentation: a) Skriv en kort rapport som beskriver din databasstruktur, designval och implementering.  
+13. Dokumentation: a) Skriv en kort rapport som beskriver din databasstruktur, designval och implementering.  
     b) Inkludera instruktioner för hur man skapar och populerar databasen.  
     c) Inkludera SQL-skript för att skapa och populerar databasen samt beskriv vad varje skript gör.
 
