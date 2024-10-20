@@ -10,13 +10,13 @@
 
    
     
-3. Implementering:  
+2. Implementering:  
     a) Skapa SQLite-tabeller baserat på din design.  
     b) Implementera lämpliga primärnycklar och främmande nycklar för att upprätthålla referensintegritet.
 
 
     
-5. Datamanipulation:  
+3. Datamanipulation:  
     a) Skriv SQL-frågor för att utföra CRUD-operationer (Create, Read, Update, Delete) på alla tabeller.
 
 
@@ -116,7 +116,7 @@
 
 
     
-7. Avancerade frågor:  
+4. Avancerade frågor:  
     a) Skriv en SQL-fråga som använder JOIN för att hämta data från minst tre tabeller.
    ```sql
    	-- Join data from three tables to get loan details
@@ -156,7 +156,7 @@
    ```
 
     
-9. Säkerhet:  
+5. Säkerhet:  
     a) Beskriv hur du skulle implementera en enkel inloggningsfunktion för bibliotekssystemet. Vilka säkerhetsaspekter bör du ta hänsyn till?
 
 	För att göra en inloggningsfunktion skulle jag låta användaren först skapa ett konto med användarnamn och lösenord. Användarens credentials sparas i en lista
@@ -174,7 +174,7 @@
 	Detta gör det möjligt att till exempel logga in på servern som admin, få reda på alla inloggningsuppgifter, eller droppa hela databasen. 
 	För att skydda sig mot en SQL-injection är det viktigt att använda sig av prepared statements, för att inte ge användaren för mycket frihet när hen matar in data i textrutorna. 
     
-11. Analys och reflektion:
+6. Analys och reflektion:
     a) Analysera din databasdesign och identifiera potentiella förbättringsområden.
 	
  	Min databasdesign är möjligtvis ganska simpel, och något noobig. Jag tror att med tiden kommer jag lära mig fler och bättre sätt att hantera data på. 
@@ -186,7 +186,7 @@
 	Borrowers och Books där. En Borrower skapar ett nytt lån på en Book när hen lånar ut boken. Loans-tabellen är som bibliotiekarien som håller koll på vem som har lånat vad och när. 
 	För att komma fram till designvalen tog jag hjälp av föreläsningsmaterial, ChatGPT och w3schools.com. Jag har lagt extra tid på att försöka förstå varför man göra vissa saker och i vilken ordning.  
     
-13. Dokumentation: a) Skriv en kort rapport som beskriver din databasstruktur, designval och implementering.  
+7. Dokumentation: a) Skriv en kort rapport som beskriver din databasstruktur, designval och implementering.  
     b) Inkludera instruktioner för hur man skapar och populerar databasen.  
     c) Inkludera SQL-skript för att skapa och populerar databasen samt beskriv vad varje skript gör.
 
