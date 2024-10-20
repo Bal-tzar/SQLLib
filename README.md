@@ -176,11 +176,13 @@
     
 11. Analys och reflektion:
     a) Analysera din databasdesign och identifiera potentiella förbättringsområden.
-	Min databasdesign är möjligtvis ganska simpel, och något noobig. Jag tror att med tiden kommer jag lära mig fler och bättre sätt att hantera data på. 
+	
+ 	Min databasdesign är möjligtvis ganska simpel, och något noobig. Jag tror att med tiden kommer jag lära mig fler och bättre sätt att hantera data på. 
 	Det kanske finns smidigare sätt att joina tabeller eller kanske bättre sätt att skapa en VIEW för att se om någon inte har lämnat tillbaka sitt lån i tid.
 
     b) Reflektera över dina designval och motivera dem.
-	Jag valde att designa databasen på sättet jag gjorde det eftersom det är så jag har lärt mig göra det. Jag valde att ha FKs i Loans-tabellen eftersom det är mest logiskt att samla datan från
+	
+ 	Jag valde att designa databasen på sättet jag gjorde det eftersom det är så jag har lärt mig göra det. Jag valde att ha FKs i Loans-tabellen eftersom det är mest logiskt att samla datan från
 	Borrowers och Books där. En Borrower skapar ett nytt lån på en Book när hen lånar ut boken. Loans-tabellen är som bibliotiekarien som håller koll på vem som har lånat vad och när. 
 	För att komma fram till designvalen tog jag hjälp av föreläsningsmaterial, ChatGPT och w3schools.com. Jag har lagt extra tid på att försöka förstå varför man göra vissa saker och i vilken ordning.  
     
