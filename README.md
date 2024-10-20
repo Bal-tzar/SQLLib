@@ -179,6 +179,7 @@
 	
  	Min databasdesign är möjligtvis ganska simpel, och något noobig. Jag tror att med tiden kommer jag lära mig fler och bättre sätt att hantera data på. 
 	Det kanske finns smidigare sätt att joina tabeller eller kanske bättre sätt att skapa en VIEW för att se om någon inte har lämnat tillbaka sitt lån i tid.
+	Jag har heller inte gjort någon form av backup eller liknande i databasen, förutom att spara alla SQL-frågor i Obsidian. Detta gör att min databas är sårbar mot hot som t.ex. SQL-injections. Detta är något jag får ta med mig till framtida projekt och tänka på att göra små backups kontinuerligt.  
 
     b) Reflektera över dina designval och motivera dem.
 	
@@ -186,7 +187,7 @@
 	Borrowers och Books där. En Borrower skapar ett nytt lån på en Book när hen lånar ut boken. Loans-tabellen är som bibliotiekarien som håller koll på vem som har lånat vad och när. 
 	För att komma fram till designvalen tog jag hjälp av föreläsningsmaterial, ChatGPT och w3schools.com. Jag har lagt extra tid på att försöka förstå varför man göra vissa saker och i vilken ordning.  
     
-7. Dokumentation: a) Skriv en kort rapport som beskriver din databasstruktur, designval och implementering.  
+8. Dokumentation: a) Skriv en kort rapport som beskriver din databasstruktur, designval och implementering.  
     b) Inkludera instruktioner för hur man skapar och populerar databasen.  
     c) Inkludera SQL-skript för att skapa och populerar databasen samt beskriv vad varje skript gör.
 
